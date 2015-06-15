@@ -1,9 +1,15 @@
 <h1>Posts</h1>
 
 <ul class='list-unstyled'>
+  <!--this is different from video, video each statement is deprecated  -->
   {{#each model as |post|}}
     <li>
-      {{post.title}}
+      {{#link-to 'post' post}}
+        {{post.title}}
+        <span class='muted'>
+          by {{post.author.name}}
+        </span>
+      {{/link-to}}
     </li>
   {{/each}}
 </ul>
